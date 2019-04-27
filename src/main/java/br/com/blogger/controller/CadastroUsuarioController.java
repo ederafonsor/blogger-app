@@ -36,7 +36,8 @@ public class CadastroUsuarioController implements Serializable {
             FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario Salvo", null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         } catch (Exception e) {
-
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Não foi possível salvar", null);
+            FacesContext.getCurrentInstance().addMessage(null, fm);
         }
 
     }
