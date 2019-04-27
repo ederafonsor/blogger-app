@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/WEB-INF/templates/default-template.xhtml">
+
+        <ui:define name="body">
+            <h:form>
+                
+                 <div class="control-group">
+                    <p:messages id="messages"  showDetail="false" showIcon="false" closable="true">
+                        <p:autoUpdate />
+                    </p:messages>
+                </div>
+                
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Nome</label>
+                        <h:inputText value="#{cadastrarPostController.postVo.titulo}" pt:placeholder="Título" required="true" requiredMessage="Título obrigatório" ></h:inputText>
+                    </div>
+                </div>
+                  <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Email</label>
+                        <h:inputText value="#{cadastrarPostController.postVo.resumo}" pt:placeholder="Resumo" required="true" requiredMessage="Resumo obrigatório"></h:inputText>
+                    </div>
+                </div>
+                 <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Senha</label>
+                        <h:inputText value="#{cadastrarPostController.postVo.texto}" pt:placeholder="Texto" required="true" requiredMessage="Texto obrigatória"></h:inputText>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                
+                    <h:commandButton class="btn btn-primary" value="Postar" action="#{cadastrarPostController.cadastrarPost()}"></h:commandButton>
+                </div>
+
+
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+</html>

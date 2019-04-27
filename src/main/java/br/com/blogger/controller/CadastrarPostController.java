@@ -2,10 +2,15 @@ package br.com.blogger.controller;
 
 import br.com.blogger.model.post.PostBe;
 import br.com.blogger.model.post.PostVo;
+import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
-public class CadastrarPostController {
+@Named
+@ViewScoped
+public class CadastrarPostController implements Serializable{
 
     private PostVo postVo;
     private PostBe postBe;
@@ -20,7 +25,7 @@ public class CadastrarPostController {
           try {
             
            getPostBe().cadastrarPost(postVo);
-            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario Salvo", null);
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Postado", null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         } catch (Exception e) {
             FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), null);
