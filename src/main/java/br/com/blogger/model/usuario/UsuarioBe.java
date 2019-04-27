@@ -1,5 +1,6 @@
 package br.com.blogger.model.usuario;
 
+import br.com.blogger.features.persistence.PersistenceProperties;
 import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -11,7 +12,7 @@ public class UsuarioBe implements Serializable {
 
     public void cadastrarUsuario(UsuarioVo usuarioVo) {
 
-        EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU");
+        EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence());
         EntityManager conexao = fabricaConexao.createEntityManager();
 
         EntityTransaction tx = conexao.getTransaction();
