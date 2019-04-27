@@ -13,8 +13,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-
+                        <h:form>
+                            <h:commandLink value="Index" action="#{indexController.flowIndex()}"></h:commandLink>
+                        </h:form>
                     </li>
                     <li class="nav-item">
                         <h:form>
@@ -27,11 +28,11 @@
                         </h:form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="post.html">Sample Post</a>
+                        <h:form>
+                            <h:commandLink value="Login" action="#{acessoController.flowLogin()}"></h:commandLink>
+                        </h:form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

@@ -11,4 +11,8 @@ public class IndexController implements Serializable {
     public IndexController() {
 
     }
+    
+     public String flowIndex() {
+        return "/index";
+    }
 }
