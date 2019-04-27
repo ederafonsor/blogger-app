@@ -31,7 +31,7 @@ public class CadastroUsuarioController implements Serializable {
 
     public void cadastrarUsuario() {
         try {
-
+            
             getUsuarioBe().cadastrarUsuario(usuarioVo);
             FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario Salvo", null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
