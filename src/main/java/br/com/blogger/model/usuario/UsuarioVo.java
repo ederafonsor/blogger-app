@@ -3,6 +3,7 @@ package br.com.blogger.model.usuario;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,10 +17,13 @@ public class UsuarioVo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nome")
     private String nome;
-   /* private String email;
+    @Column(name = "email")
+    private String email;
+    
     private String senha;
-    private Boolean ativo;
+    /*private Boolean ativo;
     private Date dataCriacao;
     private Date dataAtivacao;
     private String tokenAtivacao;
@@ -68,7 +72,7 @@ public class UsuarioVo implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-/*
+
     public String getEmail() {
         return email;
     }
@@ -85,7 +89,7 @@ public class UsuarioVo implements Serializable {
         this.senha = senha;
     }
 
-    public Boolean getAtivo() {
+  /*  public Boolean getAtivo() {
         return ativo;
     }
 

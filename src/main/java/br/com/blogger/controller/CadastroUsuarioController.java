@@ -14,21 +14,25 @@ public class CadastroUsuarioController implements Serializable {
     private UsuarioBe usuarioBe;
 
     public UsuarioBe getUsuarioBe() {
-        
-        if(this.usuarioBe == null){
-        this.usuarioBe = new UsuarioBe();
+
+        if (this.usuarioBe == null) {
+            this.usuarioBe = new UsuarioBe();
         }
         return usuarioBe;
     }
 
     public CadastroUsuarioController() {
-        if(this.usuarioVo == null){
-        this.usuarioVo = new UsuarioVo();
+        if (this.usuarioVo == null) {
+            this.usuarioVo = new UsuarioVo();
         }
     }
 
     public void cadastrarUsuario() {
         getUsuarioBe().cadastrarUsuario(usuarioVo);
+    }
+
+    public String flowCadastroUsuario() {
+        return "/usuario/cadastro-usuario";
     }
 
     public UsuarioVo getUsuarioVo() {
