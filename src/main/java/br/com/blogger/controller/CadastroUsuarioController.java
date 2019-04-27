@@ -3,6 +3,8 @@ package br.com.blogger.controller;
 import br.com.blogger.model.usuario.UsuarioBe;
 import br.com.blogger.model.usuario.UsuarioVo;
 import java.io.Serializable;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -28,7 +30,15 @@ public class CadastroUsuarioController implements Serializable {
     }
 
     public void cadastrarUsuario() {
-        getUsuarioBe().cadastrarUsuario(usuarioVo);
+        try {
+
+            getUsuarioBe().cadastrarUsuario(usuarioVo);
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario Salvo", null);
+            FacesContext.getCurrentInstance().addMessage(null, fm);
+        } catch (Exception e) {
+
+        }
+
     }
 
     public String flowCadastroUsuario() {
