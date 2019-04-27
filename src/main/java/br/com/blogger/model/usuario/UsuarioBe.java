@@ -15,8 +15,9 @@ public class UsuarioBe implements Serializable {
 
         validarCadastroUsuario(usuarioVo);
 
-         EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence());
-     //  EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU"); //Conexão Local
+        EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence());
+        // EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU"); //Conexão Local
+
         EntityManager conexao = fabricaConexao.createEntityManager();
 
         EntityTransaction tx = conexao.getTransaction();

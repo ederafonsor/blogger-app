@@ -10,7 +10,7 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class CadastrarPostController implements Serializable{
+public class CadastrarPostController implements Serializable {
 
     private PostVo postVo;
     private PostBe postBe;
@@ -21,10 +21,10 @@ public class CadastrarPostController implements Serializable{
         }
     }
 
-    public void cadastrarPost() { 
-          try {
-            
-           getPostBe().cadastrarPost(postVo);
+    public void cadastrarPost() {
+        try {
+
+            getPostBe().cadastrarPost(postVo);
             FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Postado", null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         } catch (Exception e) {
@@ -35,6 +35,10 @@ public class CadastrarPostController implements Serializable{
 
     public PostVo getPostVo() {
         return postVo;
+    }
+
+    public String flowCadastroPost() {
+        return "/post/cadastro-post";
     }
 
     public void setPostVo(PostVo postVo) {
