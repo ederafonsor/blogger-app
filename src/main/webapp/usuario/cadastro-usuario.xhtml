@@ -20,19 +20,19 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Nome</label>
-                        <h:inputText value="#{cadastroUsuarioController.usuarioVo.nome}" pt:placeholder="Nome"></h:inputText>
+                        <h:inputText value="#{cadastroUsuarioController.usuarioVo.nome}" pt:placeholder="Nome" required="true" requiredMessage="Nome obrigatório" ></h:inputText>
                     </div>
                 </div>
                   <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Email</label>
-                        <h:inputText value="#{cadastroUsuarioController.usuarioVo.email}" pt:placeholder="Email"></h:inputText>
+                        <h:inputText value="#{cadastroUsuarioController.usuarioVo.email}" pt:placeholder="Email" required="true" requiredMessage="Email obrigatório"></h:inputText>
                     </div>
                 </div>
                  <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Senha</label>
-                        <h:inputSecret value="#{cadastroUsuarioController.usuarioVo.senha}" pt:placeholder="Senha"></h:inputSecret>
+                        <h:inputSecret value="#{cadastroUsuarioController.usuarioVo.senha}" pt:placeholder="Senha" required="true" requiredMessage="Senha obrigatória"></h:inputSecret>
                     </div>
                 </div>
 
