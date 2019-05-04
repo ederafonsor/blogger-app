@@ -12,7 +12,7 @@ public class AbstractBe implements Serializable {
 
  protected EntityManager getConexao() {
         if (this.em == null || !this.em.isOpen()) {
-            em = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence()).createEntityManager();
+           em = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence()).createEntityManager();
          // em = Persistence.createEntityManagerFactory("BLOG_PG_PU").createEntityManager();
             System.out.println("Conexão aberta: " + em.hashCode());
         }

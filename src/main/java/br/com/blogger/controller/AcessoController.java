@@ -55,4 +55,7 @@ public class AcessoController implements Serializable {
     public String flowLogin() {
         return "/login";
     }
+     public String flowLogOut() {
+        return "/logout?faces-redirect=true";
+    }
 }
