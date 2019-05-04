@@ -1,5 +1,6 @@
 package br.com.blogger.model.post;
 
+import br.com.blogger.model.abstracts.AbstractVo;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb01_post")
-public class PostVo implements Serializable{
+public class PostVo extends AbstractVo{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tb01_post_sequence")
     @SequenceGenerator(name = "tb01_post_sequence", sequenceName = "seq_tb01_post")

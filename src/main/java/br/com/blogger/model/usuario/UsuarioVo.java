@@ -1,5 +1,6 @@
 package br.com.blogger.model.usuario;
 
+import br.com.blogger.model.abstracts.AbstractVo;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tb02_usuario")
-public class UsuarioVo implements Serializable {
+public class UsuarioVo extends AbstractVo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -129,4 +130,11 @@ public class UsuarioVo implements Serializable {
         this.dataCriacaoToken = dataCriacaoToken;
     }
 */
+
+    @Override
+    public String toString() {
+        return "ID: " + id + " - NOME: " + nome;
+
+    }
+    
 }

@@ -8,7 +8,21 @@
 
         <ui:define name="body">
 
-            <h1>INDEX</h1>
+            <ui:repeat var="post" value="#{indexController.postsVo.listVo}">
+                <div class="post-preview">
+                    <h:form>
+                        <h:commandLink action="#{indexController.flowVisualizarPostCompleto(post.id)}" immediate="true" >
+                            <h2 class="post-title">
+                                <h:outputText value="#{post.titulo}" ></h:outputText>
+                            </h2>
+                        </h:commandLink>
+                    </h:form>
+                    <h5 class="post-meta">
+                        <h:outputText value="#{post.resumo}" ></h:outputText>
+                    </h5>
+                </div>
+                <hr/>
+            </ui:repeat>
 
         </ui:define>
 
