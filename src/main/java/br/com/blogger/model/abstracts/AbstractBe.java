@@ -1,5 +1,6 @@
 package br.com.blogger.model.abstracts;
 
+import br.com.blogger.features.persistence.PersistenceProperties;
 import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -9,9 +10,10 @@ import javax.persistence.Persistence;
 public class AbstractBe implements Serializable {
     private EntityManager em;
 
-    protected EntityManager getConexao() {
+ protected EntityManager getConexao() {
         if (this.em == null || !this.em.isOpen()) {
-            em = Persistence.createEntityManagerFactory("BLOG_PG_PU").createEntityManager();
+            em = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence()).createEntityManager();
+         // em = Persistence.createEntityManagerFactory("BLOG_PG_PU").createEntityManager();
             System.out.println("Conexão aberta: " + em.hashCode());
         }
         return em;

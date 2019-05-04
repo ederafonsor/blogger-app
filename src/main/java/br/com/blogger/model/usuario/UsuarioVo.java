@@ -1,18 +1,23 @@
 package br.com.blogger.model.usuario;
 
 import br.com.blogger.model.abstracts.AbstractVo;
+import br.com.blogger.model.post.PostVo;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb02_usuario")
+@Table(name = "tb02_usuario")
 public class UsuarioVo extends AbstractVo {
 
     @Id
@@ -22,14 +27,14 @@ public class UsuarioVo extends AbstractVo {
     private String nome;
     @Column(name = "email")
     private String email;
-    
+   
     private String senha;
+
     /*private Boolean ativo;
     private Date dataCriacao;
     private Date dataAtivacao;
     private String tokenAtivacao;
     private Date dataCriacaoToken; */
-
     public UsuarioVo() {
     }
 
@@ -90,7 +95,19 @@ public class UsuarioVo extends AbstractVo {
         this.senha = senha;
     }
 
-  /*  public Boolean getAtivo() {
+    public List<PostVo> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostVo> posts) {
+        this.posts = posts;
+    }
+
+   @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+   private List<PostVo> posts;
+
+
+    /*  public Boolean getAtivo() {
         return ativo;
     }
 
@@ -129,12 +146,11 @@ public class UsuarioVo extends AbstractVo {
     public void setDataCriacaoToken(Date dataCriacaoToken) {
         this.dataCriacaoToken = dataCriacaoToken;
     }
-*/
-
+     */
     @Override
     public String toString() {
         return "ID: " + id + " - NOME: " + nome;
 
     }
-    
+
 }

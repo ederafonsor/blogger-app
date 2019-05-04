@@ -1,13 +1,17 @@
 package br.com.blogger.model.post;
 
 import br.com.blogger.model.abstracts.AbstractVo;
+import br.com.blogger.model.usuario.UsuarioVo;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -28,6 +32,40 @@ public class PostVo extends AbstractVo{
     
     @Column(name = "texto")
     private String texto ;
+    
+    @Column(name = "data_publicacao")
+    private Date dataCriacao;
+    
+    @Column(name = "data_criacao")
+    private Date dataPublicacao;
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public Date getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public void setDataPublicacao(Date dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
+    
+    @ManyToOne
+    @JoinColumn(name = "autor")
+     private UsuarioVo autor;
+
+    public UsuarioVo getAutor() {
+        return autor;
+    }
+
+    public void setAutor(UsuarioVo autor) {
+        this.autor = autor;
+    }
     
     public PostVo (){
     }

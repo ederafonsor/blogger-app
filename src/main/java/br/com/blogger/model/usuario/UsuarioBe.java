@@ -23,10 +23,7 @@ public class UsuarioBe extends AbstractBe {
 
         validarCadastroUsuario(usuarioVo);
 
-        EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU", new PersistenceProperties().getConfigPersistence());
-        // EntityManagerFactory fabricaConexao = Persistence.createEntityManagerFactory("BLOG_PG_PU"); //Conexão Local
-
-        EntityManager conexao = fabricaConexao.createEntityManager();
+        EntityManager conexao = getConexao();
 
         EntityTransaction tx = conexao.getTransaction();
         tx.begin();
@@ -35,20 +32,18 @@ public class UsuarioBe extends AbstractBe {
 
         tx.commit();
 
-        close(conexao);
-        fabricaConexao.close();
+        conexao.close();
     }
 
-  public void pesquisarUsuarioPorEmailSenha(UsuarioVo param) throws DaoException {
+    public void pesquisarUsuarioPorEmailSenha(UsuarioVo param) throws DaoException {
 
         EntityManager em = getConexao();
         try {
             this.usuarioDao = new UsuarioDao(em);
-            
-            
+
             UsuarioVo usuario = usuarioDao.pesquisarUsuarioPorEmailSenha(param);
             ControleAcesso.login(usuario);
-            System.out.println("Usuario:"+usuario);
+            System.out.println("Usuario:" + usuario);
 
         } catch (NoResultException e) {
             throw new DaoException("Verifique os dados informados", e);
@@ -60,8 +55,7 @@ public class UsuarioBe extends AbstractBe {
             close(em);
         }
     }
-    
-    
+
     private void validarCadastroUsuario(UsuarioVo usuario) {
 
         if (usuario.getNome().equals("")) {
@@ -75,7 +69,5 @@ public class UsuarioBe extends AbstractBe {
         }
 
     }
-    
-  
 
 }

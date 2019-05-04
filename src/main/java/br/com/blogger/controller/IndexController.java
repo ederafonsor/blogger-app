@@ -54,4 +54,7 @@ public class IndexController implements Serializable {
     public String flowIndex() {
         return "/index";
     }
+     public String flowVisualizarPostCompleto(final String postId) {
+        return "/post/post-completo?faces-redirect=true&post_id=".concat(postId);
+    }
 }
