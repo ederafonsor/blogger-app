@@ -34,11 +34,6 @@
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink  class="linkNavbar" rendered="#{!acessoWeb.usuarioLogado}" value="Inscreva-se" action="#{cadastroUsuarioController.flowCadastroUsuario()}" ></h:commandLink>
-                        </h:form>
-                    </li>
-                    <li class="nav-item">
-                        <h:form>
                             <h:commandLink class="linkNavbar" rendered="#{acessoWeb.usuarioLogado}" value="Criar publicação" action="#{cadastrarPostController.flowCadastroPost()}"  ></h:commandLink>
                         </h:form>
                     </li>
