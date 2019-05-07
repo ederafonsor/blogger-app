@@ -5,14 +5,31 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
+
     <ui:composition template="/WEB-INF/templates/default-template.xhtml">
+
+        <style rel="stylesheet" type="text/css">
+            .linkPostIndex{
+
+                font-weight: bold; 
+                color:black;   
+            }  
+            a:hover{
+                color:grey;
+                text-decoration:none;
+            }
+            .h2:hover{ 
+                color:black;
+
+            } 
+        </style>
 
         <ui:define name="body">
 
             <ui:repeat var="post" value="#{indexController.postsVo.listVo}">
                 <div class="post-preview">
                     <h:form>
-                        <h:commandLink action="#{indexController.flowVisualizarPostCompleto(post.id)}" immediate="true" >
+                        <h:commandLink class="linkPostIndex" action="#{indexController.flowVisualizarPostCompleto(post.id)}" immediate="true" >
                             <h2 class="post-title">
                                 <h:outputText value="#{post.titulo}" ></h:outputText>
                             </h2>
@@ -23,7 +40,7 @@
                     </h5>
 
                     <p>Por <h:outputText value="#{post.autor.nome}"></h:outputText>, Publicado em  <h:outputFormat value="#{post.dataPublicacao}" ><f:convertDateTime pattern="dd 'de' MMMM 'de' yyyy" />
-</h:outputFormat></p>
+                        </h:outputFormat></p>
 
                 </div>
                 <hr/>
