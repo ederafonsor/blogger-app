@@ -21,22 +21,22 @@
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink  rendered="#{!acessoWeb.usuarioLogado}" value="Cadastre-se" action="#{cadastroUsuarioController.flowCadastroUsuario()}"></h:commandLink>
+                            <h:commandLink  rendered="#{!acessoWeb.usuarioLogado}" value="Inscreva-se" action="#{cadastroUsuarioController.flowCadastroUsuario()}"></h:commandLink>
                         </h:form>
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Cadastrar Post" action="#{cadastrarPostController.flowCadastroPost()}"></h:commandLink>
+                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Criar publicação" action="#{cadastrarPostController.flowCadastroPost()}"></h:commandLink>
                         </h:form>
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink value="Login" rendered="#{!acessoWeb.usuarioLogado}" action="#{acessoController.flowLogin()}" ></h:commandLink>
+                            <h:commandLink value="Entrar" rendered="#{!acessoWeb.usuarioLogado}" action="#{acessoController.flowLogin()}" ></h:commandLink>
                         </h:form>
                     </li>
                     <li>
                         <h:form>
-                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Logout" action="#{acessoController.flowLogOut()}"></h:commandLink>
+                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Sair" action="#{acessoController.flowLogOut()}"></h:commandLink>
                         </h:form>
                     </li>
 

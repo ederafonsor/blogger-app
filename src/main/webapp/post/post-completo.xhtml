@@ -26,7 +26,7 @@
             <h:outputText value="#{postCompletoController.postsVo.texto}" escape="false"> </h:outputText>
 
             <br/>
-            <p>Por <h:outputText value="#{postCompletoController.postsVo.autor.nome}"></h:outputText>, Publicado em  <h:outputFormat value="#{postCompletoController.postsVo.dataPublicacao}" ><f:convertDateTime pattern="dd 'de' MMMM 'de' yyyy, 'às' HH:mm " />
+            <p>Por <h:outputText value="#{postCompletoController.postsVo.autor.nome}"></h:outputText>, Publicado em  <h:outputFormat value="#{postCompletoController.postsVo.dataPublicacao}" ><f:convertDateTime pattern="dd 'de' MMMM 'de' yyyy" />
                 </h:outputFormat></p>
 
             <div class="form-group d-flex justify-content-center">
@@ -39,7 +39,7 @@
                         <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
                         <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times" />
                     </p:confirmDialog>
-                    <p:commandButton class="btn btn-primary" value="ALTERAR" rendered="#{acessoWeb.usuarioLogado}" action="#{alterarPostController.flowAlterarPost(postCompletoController.postsVo.id)}"/>
+                    <p:commandButton class="btn btn-primary" value="Alterar" rendered="#{acessoWeb.usuarioLogado}" action="#{alterarPostController.flowAlterarPost(postCompletoController.postsVo.id)}"/>
                 </h:form>              
             </div>
 
