@@ -16,27 +16,28 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink value="Início" action="#{indexController.flowIndex()}"></h:commandLink>
+                            <h:commandLink value="Início" action="#{indexController.flowIndex()}" style="margin-right:15px; text-decoration:none; font-weight: bold; color:white;" ></h:commandLink>
+                        </h:form>
+
+                    </li>
+                    <li class="nav-item">
+                        <h:form>
+                            <h:commandLink  rendered="#{!acessoWeb.usuarioLogado}" value="Inscreva-se" action="#{cadastroUsuarioController.flowCadastroUsuario()}" style="margin-right:15px; text-decoration:none; font-weight: bold; color:white;" ></h:commandLink>
                         </h:form>
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink  rendered="#{!acessoWeb.usuarioLogado}" value="Inscreva-se" action="#{cadastroUsuarioController.flowCadastroUsuario()}"></h:commandLink>
+                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Criar publicação" action="#{cadastrarPostController.flowCadastroPost()}" style="margin-right:15px; text-decoration:none; font-weight: bold; color:white;" ></h:commandLink>
                         </h:form>
                     </li>
                     <li class="nav-item">
                         <h:form>
-                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Criar publicação" action="#{cadastrarPostController.flowCadastroPost()}"></h:commandLink>
-                        </h:form>
-                    </li>
-                    <li class="nav-item">
-                        <h:form>
-                            <h:commandLink value="Entrar" rendered="#{!acessoWeb.usuarioLogado}" action="#{acessoController.flowLogin()}" ></h:commandLink>
+                            <h:commandLink value="Entrar" rendered="#{!acessoWeb.usuarioLogado}" action="#{acessoController.flowLogin()}" style="margin-right:15    px; text-decoration:none; font-weight: bold; color:white;" ></h:commandLink>
                         </h:form>
                     </li>
                     <li>
                         <h:form>
-                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Sair" action="#{acessoController.flowLogOut()}"></h:commandLink>
+                            <h:commandLink rendered="#{acessoWeb.usuarioLogado}" value="Sair" action="#{acessoController.flowLogOut()}"  style="margin-right:15px; text-decoration:none; color:white; "></h:commandLink>
                         </h:form>
                     </li>
 
